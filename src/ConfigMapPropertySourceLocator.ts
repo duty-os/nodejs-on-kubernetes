@@ -15,6 +15,8 @@ export class ConfigMapPropertySourceLocator implements PropertySourceLocator {
                 throw new Error(`fallback path ${fallbackPath} can't read.`);
             }
         }
-        return YAML.parse(yamlContent);
+        const configMapJSObject = YAML.parse(yamlContent);
+        console.log(`Config map is ${JSON.stringify(configMapJSObject)}`)
+        return configMapJSObject;
     }
 }

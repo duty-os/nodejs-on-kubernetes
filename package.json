@@ -1,12 +1,12 @@
 {
   "name": "nodejs-on-kubernetes",
-  "version": "1.0.0",
+  "version": "1.0.0-beta4",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
-    "prepublish": "tsc",
-    "build": "tsc"
+    "prepublish": "rimraf lib && tsc",
+    "build": "rimraf lib && tsc"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/duty-os/nodejs-on-kubernetes#readme",
   "devDependencies": {
+    "rimraf": "^2.6.3",
     "typescript": "^3.3.3333"
   },
   "dependencies": {
